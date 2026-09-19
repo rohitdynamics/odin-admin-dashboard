@@ -7,8 +7,8 @@
 
 body{
     display: grid;
-    grid-template: 0.9fr 4fr / 1fr 4fr;
-    height: 100vh;
+    grid-template: max-content 1fr / minmax(250px, 300px) 1fr;
+    min-height: 100vh;
 }
 
 header{
@@ -37,6 +37,7 @@ input{
     border-radius: 100px;
     border-style: none;
     background-color:#e1e8f0;
+    padding: 0 16px 0 16px;
 }
 
 .header-top-left{
@@ -63,11 +64,9 @@ input{
     padding: 16px;
     padding-left: 48px;
     padding-right: 48px;
-    gap: 200px;
 }
 
 .header-bottom-left{
-    grid-column: 1/2;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -85,7 +84,6 @@ input{
 }
 
 .header-bottom-right{
-    grid-column: 2/3;
     display: flex;
     gap: 16px;
     align-items: center;
@@ -144,7 +142,7 @@ nav svg{
     width: 24px;
 }
 
-.main-content{
+main{
     grid-row: 2/3;
     grid-column: 2/3;
     display: grid;
@@ -155,19 +153,9 @@ nav svg{
     padding-right: 24px;
 }
 
-.main-content .your-projects{
+main .your-projects{
     grid-column: 1/2;
     grid-row: 1/3;
-}
-
-.main-content .announcements{
-    grid-column: 2/2;
-    grid-row: 1/2;
-}
-
-.main-content .trending{
-    grid-column: 2/2;
-    grid-row: 2/3;
 }
 
 .your-projects{
@@ -186,7 +174,6 @@ nav svg{
 
 .your-projects-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
@@ -288,6 +275,7 @@ nav svg{
     background-color: #ffffff;
     border-radius: 12px;
     display: grid;
+    /* align-content: space-between; */
 }
 
 .trending-rows{
